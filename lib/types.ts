@@ -1,0 +1,15 @@
+export interface Pokemon {
+  species: string,
+  dex: string,
+  types: string,
+  abilities: string,
+  hiddenability: string,
+  HP: string,
+  attack: string,
+  defense: string,
+  speed: string,
+  spattack: string,
+  spdefense: string,
+  experience: string,
+  ratetype: string,
+}

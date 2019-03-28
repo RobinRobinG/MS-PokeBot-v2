@@ -1,0 +1,33 @@
+{
+    "name": "rotombot",
+    "version": "0.1.0",
+    "description": "My Rotom Pokemon bot",
+    "author": "hello@robinguan.com",
+    "license": "MIT",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node ./server.js"
+    },
+    "dependencies": {
+        "botbuilder-azure": "^4.1.5",
+        "botbuilder-dialogs": "^4.1.5",
+        "@types/cheerio": "^0.22.11",
+        "@types/restify": "^7.2.9",
+        "botbuilder": "^4.3.4",
+        "botbuilder-ai": "^4.3.4",
+        "botframework-config": "^4.3.4",
+        "cheerio": "^1.0.0-rc.2",
+        "dotenv": "^7.0.0",
+        "restify": "^8.2.0",
+        "typescript": "^3.3.4000"
+    },
+    "devDependencies": {
+        "eslint": "^5.10.0",
+        "eslint-config-standard": "^12.0.0",
+        "eslint-plugin-import": "^2.14.0",
+        "eslint-plugin-node": "^8.0.0",
+        "eslint-plugin-promise": "^4.0.1",
+        "eslint-plugin-standard": "^4.0.0"
+    }
+}
