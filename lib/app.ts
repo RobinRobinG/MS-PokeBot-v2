@@ -7,7 +7,7 @@ import { config } from "dotenv";
 
 config();
 
-const botConfig = BotConfiguration.loadSync("./Rotom.bot", process.env.BOT_FILE_SECRET);
+const botConfig = BotConfiguration.loadSync("./Rotom.bot", process.env.botFileSecret);
 
 const server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, () => {
@@ -15,8 +15,11 @@ server.listen(process.env.port || process.env.PORT || 3978, () => {
 });
 
 const adapter = new BotFrameworkAdapter({
-  appId: process.env.MICROSOFT_APP_ID,
-  appPassword: process.env.MICROSOFT_APP_PASSWORD
+  appId: process.env.microsoftAppID,
+  appPassword: process.env.microsoftAppPassword,
+  channelService: process.env.ChannelService,
+  openIdMetadata: process.env.BotOpenIdMetadata
+
 });
 
 const qnamaker = new QnAMaker({
@@ -31,9 +34,15 @@ const luis = new LuisRecognizer({
   endpoint: (<ILuisService>botConfig.findServiceByNameOrId("pokeBot")).getEndpoint(),
 })
 
-const poke: PokeBot = new PokeBot(
-          qnamaker,
-          luis);
+
+
+let poke;
+try {
+    poke = new PokeBot(qnamaker, luis);
+} catch (err) {
+    console.error(`[botInitializationError]: ${ err }`);
+    process.exit();
+}
 
 server.post('/api/messages', (req, res) => {
   adapter.processActivity(req, res, async (context) => {

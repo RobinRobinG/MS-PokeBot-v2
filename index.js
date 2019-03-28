@@ -45,7 +45,7 @@ const BOT_CONFIGURATION = (process.env.NODE_ENV || DEV_ENVIRONMENT);
 const endpointConfig = botConfig.findServiceByNameOrId(BOT_CONFIGURATION);
 
 const appId = endpointConfig.appId === undefined ? process.env.microsoftAppID : endpointConfig.appId;
-const appPassword = endpointConfig.appPassword === undefined ? process.env.microsoftAppPassword: endpointConfig.appPassword;
+const appPassword = endpointConfig.appPassword === undefined ? process.env.microsoftAppPassword : endpointConfig.appPassword;
 
 // Create adapter.
 // See https://aka.ms/about-bot-adapter to learn more about .bot file its use and bot configuration .

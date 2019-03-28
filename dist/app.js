@@ -15,14 +15,16 @@ const restify = require("restify");
 const bot_1 = require("./bot");
 const dotenv_1 = require("dotenv");
 dotenv_1.config();
-const botConfig = botframework_config_1.BotConfiguration.loadSync("./Rotom.bot", process.env.BOT_FILE_SECRET);
+const botConfig = botframework_config_1.BotConfiguration.loadSync("./Rotom.bot", process.env.botFileSecret);
 const server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, () => {
     console.log(`${server.name} listening on ${server.url}`);
 });
 const adapter = new botbuilder_1.BotFrameworkAdapter({
-    appId: process.env.MICROSOFT_APP_ID,
-    appPassword: process.env.MICROSOFT_APP_PASSWORD
+    appId: process.env.microsoftAppID,
+    appPassword: process.env.microsoftAppPassword,
+    channelService: process.env.ChannelService,
+    openIdMetadata: process.env.BotOpenIdMetadata
 });
 const qnamaker = new botbuilder_ai_1.QnAMaker({
     knowledgeBaseId: botConfig.findServiceByNameOrId("PokeBotQna").kbId,
@@ -34,7 +36,14 @@ const luis = new botbuilder_ai_1.LuisRecognizer({
     endpointKey: botConfig.findServiceByNameOrId("pokeBot").subscriptionKey,
     endpoint: botConfig.findServiceByNameOrId("pokeBot").getEndpoint(),
 });
-const poke = new bot_1.PokeBot(qnamaker, luis);
+let poke;
+try {
+    poke = new bot_1.PokeBot(qnamaker, luis);
+}
+catch (err) {
+    console.error(`[botInitializationError]: ${err}`);
+    process.exit();
+}
 server.post('/api/messages', (req, res) => {
     adapter.processActivity(req, res, (context) => __awaiter(this, void 0, void 0, function* () {
         yield poke.onTurn(context);

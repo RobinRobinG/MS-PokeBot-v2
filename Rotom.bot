@@ -14,7 +14,7 @@
         },
         {
             "type": "blob",
-            "connectionString": "DefaultEndpointsProtocol=https;AccountName=rotomb2fc;AccountKey=UxX0rWjkSqBnEAkRDJQAWItB13lf45e719B+0Vg2K8+zbqQegb8/dL+BRKpmpXV8+Emss4pZDcJWwrLepYU6WA==;",
+            "connectionString": "aKjjJxXz9rkz1A2oUIop1Q==!XFhdDf53WlUMSqoBqHqxK44SFyg2fTwVg/iCqojGCkULQccgnxchxBN2wf+zNuM3MZLGznaENjMHne6d+vYQ3kAS3IsfBiD1Io6OOqSZrU5+GvzH5onMuH1/XNS50D9LN+UmBzZjn7prYnENQAA1GEAa5KgeN6ovTmKVPIKjq0ACh2OrN/r+FNEI5UoHuhPcwA2q6+Iat2svVGD/KVg8wg==",
             "tenantId": "3a61b83a-6c66-40c2-a13a-533c877c8bd1",
             "subscriptionId": "e307e2ec-a287-4028-b79d-c773901ee292",
             "resourceGroup": "myResource",
@@ -32,14 +32,14 @@
         {
             "type": "endpoint",
             "appId": "f30261bb-56a2-4cbf-ad05-2e7338431669",
-            "appPassword": "zl4RGhU:^4S6*Uo*0r71gIbm(fZaU1",
+            "appPassword": "s97YRthWXO5WoR7Guapi5Q==!enWlaObe69tCeXUY98nO4BNdZ93xnT5Yoc/4klaQeUs=",
             "endpoint": "https://rotom.azurewebsites.net/api/messages",
             "name": "production",
             "id": "4"
         },
         {
             "type": "appInsights",
-            "instrumentationKey": "21b3cf85-320a-4b39-82ba-3d7afe7bd1ff",
+            "instrumentationKey": "qi8aQZYw5k6TWWraGnp2yg==!VYEMfo3Q9crP3wqhXXbfXJPBlf66PjxU2oDljUODQSYl2st+uBIyh/RZS9Q4irwF",
             "applicationId": "fc70d94a-70d1-4c5f-b068-413b32db3e89",
             "apiKeys": {},
             "tenantId": "3a61b83a-6c66-40c2-a13a-533c877c8bd1",
@@ -51,8 +51,8 @@
         {
             "type": "luis",
             "appId": "16358163-30a6-45e3-add8-a60ec2c65543",
-            "subscriptionKey": "40098fb97d994b6f9dc49b59b6229996",
-            "authoringKey": "40098fb97d994b6f9dc49b59b6229996",
+            "subscriptionKey": "vD04FdRH/svddFpeqifoig==!hJa5bJtMeEi8863YmLJsBB3/Xew3MmL53k9YqJ6VXWTZJc1YTH43DC3SZd9cfVQb",
+            "authoringKey": "d93uwV/Ix3I263KqZQVJ6w==!eBKI8o2KL5AjcFiDdyot9TNYHVzQAyIz64lFoJKu3R+tr/CtN5jC30mK3mOaVkeI",
             "version": "0.1",
             "region": "westus",
             "name": "pokeBot",
@@ -62,12 +62,12 @@
             "type": "qna",
             "name": "PokeBotQna",
             "kbId": "d7a52bcc-0b9f-40ba-9c62-b28351b1e370",
-            "subscriptionKey": "253453e21682486bad7f657561003d1e",
-            "endpointKey": "7cabd628-1a52-48b0-b69a-f31716f9f9ef",
+            "subscriptionKey": "OtvmL0c2Hy8tQrf4hQuYCQ==!aBCRzz/mWehT6tNIx85SkyKDOOfUd8Zwfm3vaDyvtL+kDJSVdK+dUbCOTpSneZBq",
+            "endpointKey": "JkLjpjEAZf93ZyGzwwxXkA==!IHCmlXt93taPXYS33IfE+c9beAEK1JAExttkIIlz1l7Mc0wG+X+CSL1jlYLzgMep",
             "hostname": "https://pokbotqnaservice.azurewebsites.net/qnamaker",
             "id": "7"
         }
     ],
-    "padlock": "",
+    "padlock": "8LUdtHtWFllWEs1nkJwgOQ==!90PgHHq4pULaGV7sWYB6530njt0XHWay6a5g493oTRbOh4Hfxvqh8mc0AqFBnfLz",
     "version": "2.0"
 }
