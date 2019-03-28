@@ -1,4 +1,4 @@
-# Basic Bot template
+# Rotom Dex
 
 This bot has been created using [Microsoft Bot Framework](https://dev.botframework.com),
 
