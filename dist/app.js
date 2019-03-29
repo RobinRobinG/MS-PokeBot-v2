@@ -44,9 +44,9 @@ catch (err) {
     console.error(`[botInitializationError]: ${err}`);
     process.exit();
 }
-server.post('/api/messages', (req, res) => {
-    adapter.processActivity(req, res, (context) => __awaiter(this, void 0, void 0, function* () {
+server.post('/api/messages', (req, res) => __awaiter(this, void 0, void 0, function* () {
+    yield adapter.processActivity(req, res, (context) => __awaiter(this, void 0, void 0, function* () {
         yield poke.onTurn(context);
     }));
-});
+}));
 //# sourceMappingURL=app.js.map

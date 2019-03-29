@@ -25,54 +25,54 @@ class PokeBot {
                         yield context.sendActivity(qnaResults[0].answer);
                     }
                     else {
-                        yield this._luis.recognize(context).then(res => {
-                            const top = botbuilder_ai_1.LuisRecognizer.topIntent(res);
-                            let data = parser_1.getData(res.entities);
+                        yield this._luis.recognize(context).then((res) => __awaiter(this, void 0, void 0, function* () {
+                            const top = yield botbuilder_ai_1.LuisRecognizer.topIntent(res);
+                            let data = yield parser_1.getData(res.entities);
                             if (data.length >= 1) {
                                 if (top === "Pokemon") {
-                                    context.sendActivity(card_1.createCard(data));
+                                    yield context.sendActivity(card_1.createCard(data));
                                 }
                                 else if (top === "Types") {
-                                    context.sendActivity(`${res.entities.subject}'s types are ${data[0].types}`);
+                                    yield context.sendActivity(`${res.entities.subject}'s types are ${data[0].types}`);
                                 }
                                 else if (top === "Abilities") {
-                                    context.sendActivity(`${res.entities.subject}'s abilities are ${data[0].abilities}`);
+                                    yield context.sendActivity(`${res.entities.subject}'s abilities are ${data[0].abilities}`);
                                 }
                                 else if (top === "HiddenAbility") {
-                                    context.sendActivity(`${res.entities.subject}'s hidden ability is ${data[0].HP}`);
+                                    yield context.sendActivity(`${res.entities.subject}'s hidden ability is ${data[0].HP}`);
                                 }
                                 else if (top === "HP") {
-                                    context.sendActivity(`${res.entities.subject}'s HP is ${data[0].HP}`);
+                                    yield context.sendActivity(`${res.entities.subject}'s HP is ${data[0].HP}`);
                                 }
                                 else if (top === "Attack") {
-                                    context.sendActivity(`${res.entities.subject}'s attack is ${data[0].attack}`);
+                                    yield context.sendActivity(`${res.entities.subject}'s attack is ${data[0].attack}`);
                                 }
                                 else if (top === "Defense") {
-                                    context.sendActivity(`${res.entities.subject}'s defense is ${data[0].defense}`);
+                                    yield context.sendActivity(`${res.entities.subject}'s defense is ${data[0].defense}`);
                                 }
                                 else if (top === "Speed") {
-                                    context.sendActivity(`${res.entities.subject}'s speed is ${data[0].speed}`);
+                                    yield context.sendActivity(`${res.entities.subject}'s speed is ${data[0].speed}`);
                                 }
                                 else if (top === "SpAttack") {
-                                    context.sendActivity(`${res.entities.subject}'s special attack is ${data[0].spattack}`);
+                                    yield context.sendActivity(`${res.entities.subject}'s special attack is ${data[0].spattack}`);
                                 }
                                 else if (top === "SpDefense") {
-                                    context.sendActivity(`${res.entities.subject}'s special defense is ${data[0].spdefense}`);
+                                    yield context.sendActivity(`${res.entities.subject}'s special defense is ${data[0].spdefense}`);
                                 }
                                 else if (top === "Experience") {
-                                    context.sendActivity(`${res.entities.subject}'s experience is ${data[0].experience}`);
+                                    yield context.sendActivity(`${res.entities.subject}'s experience is ${data[0].experience}`);
                                 }
                                 else if (top === "RateType") {
-                                    context.sendActivity(`${res.entities.subject}'s rate type is ${data[0].ratetype}`);
+                                    yield context.sendActivity(`${res.entities.subject}'s rate type is ${data[0].ratetype}`);
                                 }
                                 else {
-                                    context.sendActivity(`Bzzzz, sorry, I'm not a psychic type, I couldn't figure out what you meant.`);
+                                    yield context.sendActivity(`Bzzzz, sorry, I'm not a psychic type, I couldn't figure out what you meant.`);
                                 }
                             }
                             else {
-                                context.sendActivity(`Bzzzz, sorry, I can't find ${res.entities.subject} in my database. ☠`);
+                                yield context.sendActivity(`Bzzzz, sorry, I can't find ${res.entities.subject} in my database. ☠`);
                             }
-                        }).catch(err => { console.log(err); });
+                        })).catch(err => { console.log(err); });
                     }
                 }
                 else {

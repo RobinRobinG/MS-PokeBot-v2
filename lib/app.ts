@@ -44,8 +44,8 @@ try {
     process.exit();
 }
 
-server.post('/api/messages', (req, res) => {
-  adapter.processActivity(req, res, async (context) => {
+server.post('/api/messages', async (req, res) => {
+  await adapter.processActivity(req, res, async (context) => {
     await poke.onTurn(context);
   });
 });
