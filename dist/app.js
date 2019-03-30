@@ -27,9 +27,9 @@ const adapter = new botbuilder_1.BotFrameworkAdapter({
     openIdMetadata: process.env.BotOpenIdMetadata
 });
 const qnamaker = new botbuilder_ai_1.QnAMaker({
-    knowledgeBaseId: botConfig.findServiceByNameOrId("PokeBotQna").kbId,
-    endpointKey: botConfig.findServiceByNameOrId("PokeBotQna").endpointKey,
-    host: botConfig.findServiceByNameOrId("PokeBotQna").hostname,
+    knowledgeBaseId: botConfig.findServiceByNameOrId("PokeBotKB").kbId,
+    endpointKey: botConfig.findServiceByNameOrId("PokeBotKB").endpointKey,
+    host: botConfig.findServiceByNameOrId("PokeBotKB").hostname,
 });
 const luis = new botbuilder_ai_1.LuisRecognizer({
     applicationId: botConfig.findServiceByNameOrId("pokeBot").appId,

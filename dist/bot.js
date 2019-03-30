@@ -8,6 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const botbuilder_1 = require("botbuilder");
 const botbuilder_ai_1 = require("botbuilder-ai");
 const parser_1 = require("./parser");
 const card_1 = require("./card");
@@ -18,7 +19,7 @@ class PokeBot {
     }
     onTurn(context) {
         return __awaiter(this, void 0, void 0, function* () {
-            if (context.activity.type === "message") {
+            if (context.activity.type === botbuilder_1.ActivityTypes.Message) {
                 if (!context.responded) {
                     const qnaResults = yield this._qnaMaker.generateAnswer(context.activity.text);
                     if (qnaResults.length > 0 && qnaResults[0].score > 0.65) {

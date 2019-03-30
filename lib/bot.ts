@@ -1,4 +1,4 @@
-import { TurnContext, Activity } from "botbuilder";
+import { TurnContext, ActivityTypes } from "botbuilder";
 import { QnAMaker, LuisRecognizer } from "botbuilder-ai";
 import { Pokemon } from "./types";
 import { getData } from "./parser";
@@ -12,7 +12,7 @@ export class PokeBot {
     this._luis = luis;
   }
   async onTurn(context: TurnContext) {
-    if(context.activity.type === "message") {
+    if(context.activity.type === ActivityTypes.Message) {
       if(!context.responded){
         const qnaResults = await this._qnaMaker.generateAnswer(context.activity.text);
         if(qnaResults.length > 0  && qnaResults[0].score > 0.65 ) {
